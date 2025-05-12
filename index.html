@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Interactive UI</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">Animation Studio</h1>
+            <div class="theme-toggle">
+                <button id="themeToggle" aria-label="Toggle theme">
+                    <span class="toggle-icon">🌓</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <section class="animation-canvas">
+                <div class="animation-target" id="animationTarget">
+                    <div class="inner-shape"></div>
+                </div>
+                <div class="particle-container" id="particleContainer"></div>
+            </section>
+
+            <section class="control-panel">
+                <div class="control-group">
+                    <h2>Animation Properties</h2>
+                    <div class="control-row">
+                        <label for="animationType">Animation:</label>
+                        <select id="animationType" class="control-input">
+                            <option value="pulse">Pulse</option>
+                            <option value="wave">Wave</option>
+                            <option value="flip">3D Flip</option>
+                            <option value="morph">Morph</option>
+                            <option value="particles">Particles</option>
+                        </select>
+                    </div>
+                    <div class="control-row">
+                        <label for="animationSpeed">Speed:</label>
+                        <input type="range" id="animationSpeed" min="0.5" max="3" step="0.1" value="1" class="control-input">
+                    </div>
+                    <div class="control-row">
+                        <label for="animationColor">Color:</label>
+                        <input type="color" id="animationColor" value="#3498db" class="control-input">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h2>Presets</h2>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-preset="default">Default</button>
+                        <button class="preset-btn" data-preset="energetic">Energetic</button>
+                        <button class="preset-btn" data-preset="calm">Calm</button>
+                        <button class="preset-btn" data-preset="custom1">Custom 1</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <div class="status-indicator" id="statusIndicator"></div>
+            <button id="savePreset" class="save-btn">Save Current as Preset</button>
+        </footer>
+    </div>
+
+   <script src="script.js" type="module"></script>
+</body>
+</html>
